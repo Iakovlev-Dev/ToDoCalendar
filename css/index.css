@@ -1,0 +1,162 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url("../image/bg.jpg");
+}
+
+h1 {
+  margin: 0 auto;
+  font-size: 3.2em;
+}
+
+.title {
+  text-align: center;
+  color: saddlebrown;
+}
+
+.month-select {
+  width: 360px;
+  margin: 20px auto;
+}
+
+.month-menu-btn-text {
+  font-size: 30px;
+  font-weight: bold;
+  color: sienna;
+}
+
+.month-select-options {
+  list-style: none;
+}
+
+.month-select .month-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.arrow-down {
+  content: url("../image/free-icon-drop-down-arrow-60995.png");
+  width: 24px;
+  transition: .3s;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 120px);
+  width: 1000px;
+  height: 700px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #242424;
+  background-image: url("../image/bg-calendar.jpg");
+}
+
+.month-select-options {
+  position: absolute;
+  width: 320px;
+  background-color: antiquewhite;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 20px;
+  display: none;
+  z-index: 0;
+}
+.month-select-options.open{
+  display: block;
+}
+
+.month-select-options .month-select-option {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  transition: .3s;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+}
+
+.month-select-option:hover {
+  background-color: bisque;
+}
+
+.month-option-text {
+  color: sienna;
+}
+
+.calendar-day {
+  justify-self: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #242424;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: sandybrown;
+  padding: 20px;
+  width: 400px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.modal-button-close {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: bisque;
+  cursor: pointer;
+}
+
+.add-task {
+  display: flex;
+  justify-content: space-between;
+}
