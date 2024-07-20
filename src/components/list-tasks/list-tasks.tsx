@@ -1,21 +1,51 @@
+import React from "react";
+import {useAppSelector} from "../../store/hooks.ts";
+import {selectCurrentDay, selectCurrentMonth} from "../../store/data-process/selectors.ts";
+import {getDate} from "../../utils.ts";
+
 export type ListTasksT = {
     onClick: () => void
 }
 
 export default function ListTasks({onClick}: ListTasksT ) {
+    const currentDate = useAppSelector(selectCurrentDay)
+    const currentMonth = useAppSelector(selectCurrentMonth)
+    const handleCloseModal = (evt: React.MouseEvent<HTMLDivElement,MouseEvent>) => {
+        if((evt.target as Element).className === 'modal') {
+            onClick()
+        }
+    }
     return (
-        <div className="modal" id="myModal" >
+        <div className="modal" id="myModal" onClick={(evt)=> handleCloseModal(evt)}>
             <div className="modal-content">
                 <div className="modal-header">
-                    <h3>5 Июля</h3>
+                    <h3>{getDate(currentDate, currentMonth)}</h3>
                     <button className="modal-button-close" onClick={onClick}>x</button>
                 </div>
                 <div className="modal-body">
                     <p>Список задач на сегодня</p>
-                    <ul className="task-list">
-                        <li className="task-item">Погулять</li>
-                        <li className="task-item">Посмотреть фильм</li>
+                    <ul>
+                        <div className="task-list">
+                            <div className="task-item">
+                                <li>Погулять</li>
+                            </div>
+                            <div className="task-buttons">
+                                <div className="edit"/>
+                                <div className="delete"/>
+                            </div>
+                        </div>
+                        <div className="task-list">
+                            <div className="task-item">
+                                <li>Посмотреть фильм</li>
+                            </div>
+                            <div className="task-buttons">
+                                <div className="edit"/>
+                                <div className="delete"/>
+                            </div>
+
+                        </div>
                     </ul>
+
                 </div>
                 <div className="add-task">
                     <input id="text-task"/>
