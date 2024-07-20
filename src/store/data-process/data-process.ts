@@ -1,12 +1,14 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {NameSpace} from "../../const.ts";
 import {DataProcess} from "../../types/state.ts";
+import {toDos} from "../../mocks/todos.ts";
 
 
 const initialState: DataProcess = {
     currentMonth: '',
     currentDay: '',
-    currentYear: '2024'
+    currentYear: '2024',
+    listToDos: toDos
 }
 
 export const dataProcess = createSlice({

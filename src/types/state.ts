@@ -1,9 +1,11 @@
 import {store} from "../store";
+import {TToDos} from "./todos.ts";
 
 export type DataProcess = {
     currentMonth: string,
     currentDay: string,
     currentYear: string,
+    listToDos: TToDos
 }
 
 

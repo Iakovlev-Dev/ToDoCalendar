@@ -189,9 +189,14 @@ h1 {
 }
 
 .task-list {
-  display: flex;
+
   justify-content: space-between;
   max-width: 320px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
 }
 
 .task-buttons {
